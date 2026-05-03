@@ -5,3 +5,4 @@ resources:
   - repo-secret.yaml
   - secret-store.yaml
   - vault-token.yaml
+  - application.yaml
