@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: gitea-app
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/mwalilisteve/agribora-technical-assesment
+    path: agribora-sample-app/sample-app
+    targetRevision: main
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
