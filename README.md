@@ -249,6 +249,11 @@ vault kv put secret/gitea \
   SECRET_KEY=your-secret-key-32chars-minimum \
   INTERNAL_TOKEN=your-internal-token-32chars
 
+# Store ArgoCD Secrets
+vault kv put secret/argocd/my-repo \
+  username="username" \
+  password="your-new-github-token"
+
 # Verify
 vault kv get secret/gitea
 ```
