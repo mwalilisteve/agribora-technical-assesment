@@ -32,6 +32,8 @@ spec:
     name: flux-system
   dependsOn:
     - name: infra-traefik
+    - name: infra-external-secrets  
+    - name: infra-vault
   healthChecks:
     - apiVersion: helm.toolkit.fluxcd.io/v2
       kind: HelmRelease
