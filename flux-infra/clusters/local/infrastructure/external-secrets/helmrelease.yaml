@@ -15,3 +15,7 @@ spec:
         namespace: external-secrets
   values:
     installCRDs: true
+    webhook:
+    certManager:
+      enabled: false
+
