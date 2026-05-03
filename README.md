@@ -152,8 +152,8 @@ app-repo/
 ### Step 1 — Clone the Terraform Repo
 
 ```bash
-git clone https://github.com/your-org/terraform
-cd terraform-repo
+git clone https://github.com/mwalilisteve/agribora-technical-assesment/tree/main/terraform
+cd terraform/environments/local
 ```
 
 ### Step 2 — Configure Variables

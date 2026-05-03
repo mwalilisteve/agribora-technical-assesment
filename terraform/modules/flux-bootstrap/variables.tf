@@ -24,7 +24,6 @@ variable "flux_namespace" {
   type        = string
   default     = "flux-system"
 }
-
 variable "flux_version" {
   description = "Version of Flux to bootstrap"
   type        = string
