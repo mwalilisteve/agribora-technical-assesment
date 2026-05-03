@@ -1,0 +1,166 @@
+{
+  "version": 4,
+  "terraform_version": "1.15.0",
+  "serial": 26,
+  "lineage": "b1dea573-365f-0c80-de8e-f26594ab95d2",
+  "outputs": {},
+  "resources": [
+    {
+      "module": "module.cluster",
+      "mode": "managed",
+      "type": "k3d_cluster",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/pvotal-tech/k3d\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "agents": 1,
+            "credentials": [
+              {
+                "client_certificate": "-----BEGIN CERTIFICATE-----\nMIIBkDCCATegAwIBAgIIZIbAp04cxZwwCgYIKoZIzj0EAwIwIzEhMB8GA1UEAwwY\nazNzLWNsaWVudC1jYUAxNzc3ODQxNDMyMB4XDTI2MDUwMzIwNTAzMloXDTI3MDUw\nMzIwNTAzMlowMDEXMBUGA1UEChMOc3lzdGVtOm1hc3RlcnMxFTATBgNVBAMTDHN5\nc3RlbTphZG1pbjBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABDJK9qFIu5nXl7Jw\nk1ghI9oRv7cmv0da1gFC0kb0vp5UERTZzHY4eSFVrI8euXnkLE3zhUoYwdHz9f0L\nazN8x7ajSDBGMA4GA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDAjAf\nBgNVHSMEGDAWgBRQV1UnV3EkMMzKHFJJ0Tj6uKGQaTAKBggqhkjOPQQDAgNHADBE\nAiB5N7oC8kwua+E2x/pdlkWjVAT/yOF2uSt0ahYoPALLdQIgM5+90ugfTiKMXJqj\ngdiAcmyCt3xbitmioK4QzZSshfI=\n-----END CERTIFICATE-----\n-----BEGIN CERTIFICATE-----\nMIIBeDCCAR2gAwIBAgIBADAKBggqhkjOPQQDAjAjMSEwHwYDVQQDDBhrM3MtY2xp\nZW50LWNhQDE3Nzc4NDE0MzIwHhcNMjYwNTAzMjA1MDMyWhcNMzYwNDMwMjA1MDMy\nWjAjMSEwHwYDVQQDDBhrM3MtY2xpZW50LWNhQDE3Nzc4NDE0MzIwWTATBgcqhkjO\nPQIBBggqhkjOPQMBBwNCAARBt4yQMF3/y8G0GPiVUD1xqUJJ98j4cfYdLQ++Fv/2\nMaMagfT8k5CfYsk7/0fl2jmCStydt5BSCuz/0kXwv9hRo0IwQDAOBgNVHQ8BAf8E\nBAMCAqQwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUUFdVJ1dxJDDMyhxSSdE4\n+rihkGkwCgYIKoZIzj0EAwIDSQAwRgIhAJOYvV+4Wh03rMg1D6OVj+9Da4cMoft5\ncXmus5QLCaY0AiEAlj4qlUtBZ0NXWRJyWTTLOIfeGIySGGji0pSr/oOf3mw=\n-----END CERTIFICATE-----\n",
+                "client_key": "-----BEGIN EC PRIVATE KEY-----\nMHcCAQEEIJqAfn1dLQuD6bbBCTkfpRrlNAClbEtnS9F0e4vAcau6oAoGCCqGSM49\nAwEHoUQDQgAEMkr2oUi7mdeXsnCTWCEj2hG/tya/R1rWAULSRvS+nlQRFNnMdjh5\nIVWsjx65eeQsTfOFShjB0fP1/QtrM3zHtg==\n-----END EC PRIVATE KEY-----\n",
+                "cluster_ca_certificate": "-----BEGIN CERTIFICATE-----\nMIIBdzCCAR2gAwIBAgIBADAKBggqhkjOPQQDAjAjMSEwHwYDVQQDDBhrM3Mtc2Vy\ndmVyLWNhQDE3Nzc4NDE0MzIwHhcNMjYwNTAzMjA1MDMyWhcNMzYwNDMwMjA1MDMy\nWjAjMSEwHwYDVQQDDBhrM3Mtc2VydmVyLWNhQDE3Nzc4NDE0MzIwWTATBgcqhkjO\nPQIBBggqhkjOPQMBBwNCAATrHj86Nm/IddPCxSRsWII/aXlYRsX9Z5q/iBP4HvKF\nJH90PVUyjtQ21bSWnSakpWmfABThouKvcc99OttMwstwo0IwQDAOBgNVHQ8BAf8E\nBAMCAqQwDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQU22kFwEt8PiWXdcIJ4/YL\nEtEV8hcwCgYIKoZIzj0EAwIDSAAwRQIgZqUwt/BMVn7RNDOUKdsnMHyQmydWtIaQ\n/m2GDxrx1DQCIQCiRkPAu/qxNQVb5lLrIcyySfMebC05mI+zx+70FW/1GQ==\n-----END CERTIFICATE-----\n",
+                "host": "https://0.0.0.0:6443",
+                "raw": "apiVersion: v1\nclusters:\n- cluster:\n    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJkekNDQVIyZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQWpNU0V3SHdZRFZRUUREQmhyTTNNdGMyVnkKZG1WeUxXTmhRREUzTnpjNE5ERTBNekl3SGhjTk1qWXdOVEF6TWpBMU1ETXlXaGNOTXpZd05ETXdNakExTURNeQpXakFqTVNFd0h3WURWUVFEREJock0zTXRjMlZ5ZG1WeUxXTmhRREUzTnpjNE5ERTBNekl3V1RBVEJnY3Foa2pPClBRSUJCZ2dxaGtqT1BRTUJCd05DQUFUckhqODZObS9JZGRQQ3hTUnNXSUkvYVhsWVJzWDlaNXEvaUJQNEh2S0YKSkg5MFBWVXlqdFEyMWJTV25TYWtwV21mQUJUaG91S3ZjYzk5T3R0TXdzdHdvMEl3UURBT0JnTlZIUThCQWY4RQpCQU1DQXFRd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFRmdRVTIya0Z3RXQ4UGlXWGRjSUo0L1lMCkV0RVY4aGN3Q2dZSUtvWkl6ajBFQXdJRFNBQXdSUUlnWnFVd3QvQk1WbjdSTkRPVUtkc25NSHlRbXlkV3RJYVEKL20yR0R4cngxRFFDSVFDaVJrUEF1L3F4TlFWYjVsTHJJY3l5U2ZNZWJDMDVtSSt6eCs3MEZXLzFHUT09Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K\n    server: https://0.0.0.0:6443\n  name: k3d-local-dev\ncontexts:\n- context:\n    cluster: k3d-local-dev\n    user: admin@k3d-local-dev\n  name: k3d-local-dev\ncurrent-context: k3d-local-dev\nkind: Config\npreferences: {}\nusers:\n- name: admin@k3d-local-dev\n  user:\n    client-certificate-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJrRENDQVRlZ0F3SUJBZ0lJWkliQXAwNGN4Wnd3Q2dZSUtvWkl6ajBFQXdJd0l6RWhNQjhHQTFVRUF3d1kKYXpOekxXTnNhV1Z1ZEMxallVQXhOemMzT0RReE5ETXlNQjRYRFRJMk1EVXdNekl3TlRBek1sb1hEVEkzTURVdwpNekl3TlRBek1sb3dNREVYTUJVR0ExVUVDaE1PYzNsemRHVnRPbTFoYzNSbGNuTXhGVEFUQmdOVkJBTVRESE41CmMzUmxiVHBoWkcxcGJqQlpNQk1HQnlxR1NNNDlBZ0VHQ0NxR1NNNDlBd0VIQTBJQUJESks5cUZJdTVuWGw3SncKazFnaEk5b1J2N2NtdjBkYTFnRkMwa2IwdnA1VUVSVFp6SFk0ZVNGVnJJOGV1WG5rTEUzemhVb1l3ZEh6OWYwTAphek44eDdhalNEQkdNQTRHQTFVZER3RUIvd1FFQXdJRm9EQVRCZ05WSFNVRUREQUtCZ2dyQmdFRkJRY0RBakFmCkJnTlZIU01FR0RBV2dCUlFWMVVuVjNFa01NektIRkpKMFRqNnVLR1FhVEFLQmdncWhrak9QUVFEQWdOSEFEQkUKQWlCNU43b0M4a3d1YStFMngvcGRsa1dqVkFUL3lPRjJ1U3QwYWhZb1BBTExkUUlnTTUrOTB1Z2ZUaUtNWEpxagpnZGlBY215Q3QzeGJpdG1pb0s0UXpaU3NoZkk9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0KLS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUJlRENDQVIyZ0F3SUJBZ0lCQURBS0JnZ3Foa2pPUFFRREFqQWpNU0V3SHdZRFZRUUREQmhyTTNNdFkyeHAKWlc1MExXTmhRREUzTnpjNE5ERTBNekl3SGhjTk1qWXdOVEF6TWpBMU1ETXlXaGNOTXpZd05ETXdNakExTURNeQpXakFqTVNFd0h3WURWUVFEREJock0zTXRZMnhwWlc1MExXTmhRREUzTnpjNE5ERTBNekl3V1RBVEJnY3Foa2pPClBRSUJCZ2dxaGtqT1BRTUJCd05DQUFSQnQ0eVFNRjMveThHMEdQaVZVRDF4cVVKSjk4ajRjZllkTFErK0Z2LzIKTWFNYWdmVDhrNUNmWXNrNy8wZmwyam1DU3R5ZHQ1QlNDdXovMGtYd3Y5aFJvMEl3UURBT0JnTlZIUThCQWY4RQpCQU1DQXFRd0R3WURWUjBUQVFIL0JBVXdBd0VCL3pBZEJnTlZIUTRFRmdRVVVGZFZKMWR4SkRETXloeFNTZEU0CityaWhrR2t3Q2dZSUtvWkl6ajBFQXdJRFNRQXdSZ0loQUpPWXZWKzRXaDAzck1nMUQ2T1ZqKzlEYTRjTW9mdDUKY1htdXM1UUxDYVkwQWlFQWxqNHFsVXRCWjBOWFdSSnlXVFRMT0lmZUdJeVNHR2ppMHBTci9vT2YzbXc9Ci0tLS0tRU5EIENFUlRJRklDQVRFLS0tLS0K\n    client-key-data: LS0tLS1CRUdJTiBFQyBQUklWQVRFIEtFWS0tLS0tCk1IY0NBUUVFSUpxQWZuMWRMUXVENmJiQkNUa2ZwUnJsTkFDbGJFdG5TOUYwZTR2QWNhdTZvQW9HQ0NxR1NNNDkKQXdFSG9VUURRZ0FFTWtyMm9VaTdtZGVYc25DVFdDRWoyaEcvdHlhL1IxcldBVUxTUnZTK25sUVJGTm5NZGpoNQpJVldzang2NWVlUXNUZk9GU2hqQjBmUDEvUXRyTTN6SHRnPT0KLS0tLS1FTkQgRUMgUFJJVkFURSBLRVktLS0tLQo=\n"
+              }
+            ],
+            "env": [],
+            "id": "local-dev",
+            "image": "rancher/k3s:v1.29.0-k3s1",
+            "k3d": [
+              {
+                "disable_image_volume": false,
+                "disable_load_balancer": false
+              }
+            ],
+            "k3s": [
+              {
+                "extra_args": [
+                  {
+                    "arg": "--disable=traefik",
+                    "node_filters": [
+                      "server:0"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "kube_api": [
+              {
+                "host": "0.0.0.0",
+                "host_ip": "",
+                "host_port": 6443
+              }
+            ],
+            "kubeconfig": [
+              {
+                "switch_current_context": true,
+                "update_default_kubeconfig": true
+              }
+            ],
+            "label": [],
+            "name": "local-dev",
+            "network": "k3d-local-dev",
+            "port": [
+              {
+                "container_port": 80,
+                "host": "",
+                "host_port": 8080,
+                "node_filters": [
+                  "loadbalancer"
+                ],
+                "protocol": ""
+              },
+              {
+                "container_port": 443,
+                "host": "",
+                "host_port": 8443,
+                "node_filters": [
+                  "loadbalancer"
+                ],
+                "protocol": ""
+              }
+            ],
+            "registries": [],
+            "runtime": [],
+            "servers": 1,
+            "token": "oKnCOZdjXtbRQRfpcRFj",
+            "volume": []
+          },
+          "sensitive_attributes": [
+            [
+              {
+                "type": "get_attr",
+                "value": "credentials"
+              }
+            ],
+            [
+              {
+                "type": "get_attr",
+                "value": "token"
+              }
+            ]
+          ],
+          "identity_schema_version": 0,
+          "private": "bnVsbA=="
+        }
+      ]
+    },
+    {
+      "module": "module.flux_bootstrap",
+      "mode": "managed",
+      "type": "flux_bootstrap_git",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/fluxcd/flux\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "cluster_domain": "cluster.local",
+            "components": [
+              "helm-controller",
+              "kustomize-controller",
+              "notification-controller",
+              "source-controller"
+            ],
+            "components_extra": [
+              "image-automation-controller",
+              "image-reflector-controller"
+            ],
+            "delete_git_manifests": true,
+            "disable_secret_creation": null,
+            "embedded_manifests": false,
+            "id": "flux-system",
+            "image_pull_secret": null,
+            "interval": "1m0s",
+            "keep_namespace": false,
+            "kustomization_override": null,
+            "log_level": "info",
+            "manifests_path": null,
+            "namespace": "flux-system",
+            "network_policy": true,
+            "path": "clusters/local",
+            "recurse_submodules": null,
+            "registry": "ghcr.io/fluxcd",
+            "registry_credentials": null,
+            "repository_files": {
+              "clusters/local/flux-system/gotk-sync.yaml": ""
+            },
+            "secret_name": "flux-system",
+            "timeouts": null,
+            "toleration_keys": null,
+            "version": "v2.8.6",
+            "watch_all_namespaces": true
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "dependencies": [
+            "module.cluster.k3d_cluster.this"
+          ]
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}
