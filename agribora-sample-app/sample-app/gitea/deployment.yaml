@@ -1,0 +1,115 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitea
+  namespace: gitea-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gitea
+  template:
+    metadata:
+      labels:
+        app: gitea
+    spec:
+      initContainers:
+        - name: wait-for-postgres
+          image: busybox
+          command: ["sh", "-c", "until nc -z postgres 5432; do echo waiting for postgres; sleep 2; done"]
+        - name: wait-for-redis
+          image: busybox
+          command: ["sh", "-c", "until nc -z redis 6379; do echo waiting for redis; sleep 2; done"]
+        - name: configure-gitea
+          image: gitea/gitea:1.21-rootless
+          command: ["sh", "-c"]
+          args:
+            - |
+              mkdir -p /etc/gitea
+              cat > /etc/gitea/app.ini << EOF
+              APP_NAME = Agribora Demo App
+              RUN_MODE = prod
+              RUN_USER = git
+
+              [database]
+              DB_TYPE  = postgres
+              HOST     = postgres:5432
+              NAME     = $(POSTGRES_DB)
+              USER     = $(POSTGRES_USER)
+              PASSWD   = $(POSTGRES_PASSWORD)
+              SSL_MODE = disable
+
+              [cache]
+              ENABLED  = true
+              ADAPTER  = redis
+              INTERVAL = 60
+              HOST     = network=tcp,addr=redis:6379,db=0,pool_size=100,idle_timeout=180
+
+              [session]
+              PROVIDER        = redis
+              PROVIDER_CONFIG = network=tcp,addr=redis:6379,db=1,pool_size=100,idle_timeout=180
+
+              [queue]
+              TYPE     = redis
+              CONN_STR = redis://redis:6379/2
+
+              [server]
+              HTTP_PORT   = 3000
+              ROOT_URL    = http://gitea.local:8080/
+              DISABLE_SSH = true
+
+              [security]
+              INSTALL_LOCK   = true
+              SECRET_KEY     = $(SECRET_KEY)
+              INTERNAL_TOKEN = $(INTERNAL_TOKEN)
+
+              [log]
+              MODE  = console
+              LEVEL = info
+              EOF
+              echo "app.ini written successfully"
+          envFrom:
+            - secretRef:
+                name: postgres-secret    # ESO creates this from Vault
+          volumeMounts:
+            - name: gitea-config
+              mountPath: /etc/gitea
+
+      containers:
+        - name: gitea
+          image: gitea/gitea:1.21-rootless
+          ports:
+            - containerPort: 3000
+              name: http
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          volumeMounts:
+            - name: gitea-data
+              mountPath: /var/lib/gitea
+            - name: gitea-config
+              mountPath: /etc/gitea
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 40
+            periodSeconds: 10
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: /
+              port: 3000
+            initialDelaySeconds: 90
+            periodSeconds: 15
+
+      volumes:
+        - name: gitea-data
+          persistentVolumeClaim:
+            claimName: gitea-pvc
+        - name: gitea-config
+          emptyDir: {}

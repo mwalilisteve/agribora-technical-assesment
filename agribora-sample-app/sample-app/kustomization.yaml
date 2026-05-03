@@ -1,0 +1,22 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - namespace.yaml
+  - storageclass.yaml
+  - database/pvc.yaml
+  - database/statefulset.yaml
+  - database/service.yaml
+  - redis/pvc.yaml
+  - redis/deployment.yaml
+  - redis/service.yaml
+  - gitea/pvc.yaml
+  - gitea/deployment.yaml
+  - gitea/service.yaml
+  - ingress/ingressroute.yaml
+  - secrets/secret-store.yaml
+  - secrets/external-secret.yaml
+  - network-policies/allow-gitea-egress.yaml
+  - network-policies/allow-gitea-from-traefik.yaml
+  - network-policies/allow-postgres-from-gitea.yaml
+  - network-policies/allow-redis-from-gitea.yaml
+  - network-policies/deny-all.yaml

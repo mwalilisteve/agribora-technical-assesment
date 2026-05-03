@@ -1,0 +1,22 @@
+# Redis only accepts connections from Gitea
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-redis-from-gitea
+  namespace: gitea-app
+spec:
+  podSelector:
+    matchLabels:
+      app: redis
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: gitea
+      ports:
+        - protocol: TCP
+          port: 6379
+  egress: []    

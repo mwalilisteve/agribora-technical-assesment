@@ -1,0 +1,22 @@
+# Postgres only accepts connections from Gitea
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-postgres-from-gitea
+  namespace: gitea-app
+spec:
+  podSelector:
+    matchLabels:
+      app: postgres
+  policyTypes:
+    - Ingress
+    - Egress
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              app: gitea
+      ports:
+        - protocol: TCP
+          port: 5432
+  egress: []    

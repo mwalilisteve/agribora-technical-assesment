@@ -1,0 +1,11 @@
+# Default deny all ingress and egress for the entire namespace
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny-all
+  namespace: gitea-app
+spec:
+  podSelector: {}
+  policyTypes:
+    - Ingress
+    - Egress

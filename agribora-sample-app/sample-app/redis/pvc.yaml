@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: redis-pvc
+  namespace: gitea-app
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: gitea-storage
+  resources:
+    requests:
+      storage: 256Mi

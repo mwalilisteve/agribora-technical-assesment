@@ -1,0 +1,7 @@
+resources:
+  - helmrepository.yaml
+  - helmrelease.yaml
+  - namespace.yaml
+  - repo-secret.yaml
+  - secret-store.yaml
+  - vault-token.yaml

@@ -1,0 +1,26 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: gitea-headers
+  namespace: gitea-app
+spec:
+  headers:
+    customRequestHeaders:
+      X-Forwarded-Proto: "http"
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: gitea
+  namespace: gitea-app
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`gitea.local`)
+      kind: Rule
+      middlewares:
+        - name: gitea-headers
+      services:
+        - name: gitea
+          port: 3000
