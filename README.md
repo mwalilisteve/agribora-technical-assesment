@@ -181,7 +181,7 @@ flux_version         = "v2.8.6"
 Create `secrets.tfvars` (never commit this file):
 
 ```hcl
-github_token = "ghp_xxxxxxxxxxxxxxxxxxxx"
+github_token = "xxxxxxxxx"
 ```
 
 Add to `.gitignore`:
@@ -252,7 +252,7 @@ vault kv put secret/gitea \
 # Store ArgoCD Secrets
 vault kv put secret/argocd/my-repo \
   username="username" \
-  password="your-new-github-token"
+  password="your-new-token"
 
 # Verify
 vault kv get secret/gitea

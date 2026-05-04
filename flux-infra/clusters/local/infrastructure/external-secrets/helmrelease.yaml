@@ -13,9 +13,13 @@ spec:
         kind: HelmRepository
         name: external-secrets
         namespace: external-secrets
+  install:
+    crds: Create 
+    remediation:
+      retries: 3       
+  upgrade:
+    crds: CreateReplace
+    remediation:
+      retries: 3        
   values:
-    installCRDs: true
-    webhook:
-    certManager:
-      enabled: false
-
+    installCRDs: false  
