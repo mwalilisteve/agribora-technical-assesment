@@ -14,7 +14,7 @@ A fully automated GitOps platform running on a local k3d Kubernetes cluster, boo
 │        │                                                        │
 │        ▼                                                        │
 │   ┌─────────┐     ┌──────────────────────────────────────────┐  │
-│   │  k3d    │     │           fleet-infra (Git Repo)         │  │
+│   │  k3d    │     │           flux-infra (Git Repo)         │  │
 │   │ Cluster │◄────│  clusters/local/                         │  │
 │   └─────────┘     │    ├── flux-system/   (Flux bootstrap)   │  │
 │        │          │    ├── infrastructure/ (Helm releases)   │  │
