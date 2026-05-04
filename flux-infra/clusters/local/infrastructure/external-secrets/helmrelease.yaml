@@ -22,4 +22,16 @@ spec:
     remediation:
       retries: 3        
   values:
-    installCRDs: true  
+    installCRDs: true
+    webhook:
+      enabled: true
+      readinessProbe:
+        initialDelaySeconds: 60   
+        periodSeconds: 10
+        failureThreshold: 10      
+    certController:
+      enabled: true
+      readinessProbe:
+        initialDelaySeconds: 60   
+        periodSeconds: 10
+        failureThreshold: 10
