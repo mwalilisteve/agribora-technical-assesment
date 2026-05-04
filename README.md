@@ -243,9 +243,9 @@ export VAULT_TOKEN=root
 
 # Store application secrets
 vault kv put secret/gitea \
-  POSTGRES_DB=<> \
-  POSTGRES_USER=<> \
-  POSTGRES_PASSWORD=your-secure-password \
+  POSTGRES_DB=gitea \
+  POSTGRES_USER=gitea \
+  POSTGRES_PASSWORD=gitea \
   SECRET_KEY=your-secret-key-32chars-minimum \
   INTERNAL_TOKEN=your-internal-token-32chars
 
@@ -271,9 +271,17 @@ PASSWORD=$(kubectl get secret argocd-initial-admin-secret -n argocd \
   -o jsonpath="{.data.password}" | base64 -d)
 
 # Login
-argocd login localhost:8888 --username admin --password $PASSWORD --insecure
+argocd login localhost:8888 --username admin --password WhBq3bRbxp5JrLkk --insecure
 
-# Sync the app
+# Create & Sync the app
+argocd app create gitea-app \
+  --repo https://github.com/mwalilisteve/agribora-technical-assesment \
+  --path agribora-sample-app/sample-app \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace gitea-app \
+  --project gitea \
+  --sync-policy automated
+
 argocd app sync gitea-app
 ```
 
