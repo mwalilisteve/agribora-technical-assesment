@@ -271,7 +271,7 @@ PASSWORD=$(kubectl get secret argocd-initial-admin-secret -n argocd \
   -o jsonpath="{.data.password}" | base64 -d)
 
 # Login
-argocd login localhost:8888 --username admin --password WhBq3bRbxp5JrLkk --insecure
+argocd login localhost:8888 --username admin --password $PASSWORD --insecure
 
 # Create & Sync the app
 argocd app create gitea-app \
@@ -279,7 +279,7 @@ argocd app create gitea-app \
   --path agribora-sample-app/sample-app \
   --dest-server https://kubernetes.default.svc \
   --dest-namespace gitea-app \
-  --project gitea \
+  --project default \
   --sync-policy automated
 
 argocd app sync gitea-app
