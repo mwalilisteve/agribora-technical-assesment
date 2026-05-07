@@ -143,7 +143,7 @@ app-repo/
 ### GitHub Requirements
 
 - A GitHub Personal Access Token (PAT) with `repo` scope
-- An existing GitHub repository for `fleet-infra` (the Flux GitOps repo)
+- An existing GitHub repository for `flux-infra` (the Flux GitOps repo)
 
 ---
 
